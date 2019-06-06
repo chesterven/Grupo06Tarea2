@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Grupo06Tarea2</string>
+    <string name="bienvenidos">Bienvenidos a la aplicación</string>
+    <string name="arroz">Pupusas de arroz</string>
+    <string name="empezar">Empezar</string>
+
 </resources>
