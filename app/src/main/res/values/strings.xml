@@ -3,5 +3,9 @@
     <string name="bienvenidos">Bienvenidos a la aplicación</string>
     <string name="arroz">Pupusas de arroz</string>
     <string name="empezar">Empezar</string>
-
+    <string name="ingresar">Ingrese sus datos:</string>4
+    <string name="nombre">Nombre:</string>
+    <string name="apellido">Apellido:</string>
+    <string name="llevar">Para llevar:</string>
+    <string name="empezarPedido">Empezar pedido</string>
 </resources>
