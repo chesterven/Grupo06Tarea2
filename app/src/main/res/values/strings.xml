@@ -10,4 +10,6 @@
     <string name="empezarPedido">Empezar pedido</string>
     <string name="Iniciar">Iniciar</string>
     <string name="titulo">PUPASYA!</string>
+    <string name="tituloMaiz">Ordene sus pupusas de maíz</string>
+    <string name="tituloArroz">Ordene sus pupusas de arroz</string>
 </resources>
