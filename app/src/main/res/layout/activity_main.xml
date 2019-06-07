@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuPrincipal">
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
 
     <TableRow
         android:layout_width="match_parent"
@@ -17,8 +20,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bienvenidos"
-            android:textStyle="bold"
-            android:textSize="25dp"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/titulo"
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold" />
     </TableRow>
 
     <TableRow
@@ -29,7 +48,7 @@
         android:weightSum="4">
 
         <ImageView
-            android:id="@+id/imagen1"
+            android:id="@+id/imagenInicio"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="4"
@@ -41,13 +60,19 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:weightSum="4">
 
         <Button
             android:onClick="iniciarPedido"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:text="@string/Iniciar"
+
             tools:ignore="OnClick" />
     </TableRow>
 </TableLayout>
+    </ScrollView>

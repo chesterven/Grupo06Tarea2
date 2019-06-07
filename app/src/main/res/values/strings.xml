@@ -8,4 +8,6 @@
     <string name="apellido">Apellido:</string>
     <string name="llevar">Para llevar:</string>
     <string name="empezarPedido">Empezar pedido</string>
+    <string name="Iniciar">Iniciar</string>
+    <string name="titulo">PUPASYA!</string>
 </resources>

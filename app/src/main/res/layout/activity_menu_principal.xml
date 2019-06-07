@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuPrincipal">
+<TableLayout
+android:layout_width="fill_parent"
+android:layout_height="match_parent">
 
 
     <TableRow
@@ -18,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ingresar"
+            android:textColor="@color/colorAccent"
             android:textStyle="bold"
             android:textSize="25dp" />
     </TableRow>
@@ -28,16 +32,16 @@
         android:layout_marginTop="10dp"
         android:weightSum="4">
 
-    <ImageView
-        android:id="@+id/imagen1"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="4"
-        android:background="@color/colorAccent"
-        tools:ignore="MissingConstraints"
+        <ImageView
+            android:id="@+id/imagenPedido"
+            android:layout_height="125dp"
+            android:layout_width="75dp"
+            android:layout_weight="4"
+            tools:ignore="MissingConstraints"
 
-        />
+            />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -55,6 +59,7 @@
             android:layout_weight="4"
             android:layout_height="wrap_content"
             android:text="@string/nombre"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
             android:textStyle="italic"
             android:gravity="center"/>
@@ -64,12 +69,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="4"
+        android:gravity="center"
         android:layout_marginTop="15dp">
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:ems="10"
@@ -89,6 +96,7 @@
             android:layout_weight="4"
             android:layout_height="wrap_content"
             android:text="@string/apellido"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
             android:textStyle="italic"
             android:gravity="center"/>
@@ -98,13 +106,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp"
+        android:gravity="center"
         android:weightSum="4">
 
         <EditText
             android:id="@+id/apellidoUsuario"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:ems="10"
             android:gravity="center"
             android:inputType="text" />
@@ -124,6 +133,7 @@
             android:layout_height="wrap_content"
             android:text="@string/llevar"
             android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="italic"
             android:gravity="center"/>
         <CheckBox
@@ -145,7 +155,9 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
             android:text="@string/empezarPedido" />
     </TableRow>
 
 </TableLayout>
+</ScrollView>
