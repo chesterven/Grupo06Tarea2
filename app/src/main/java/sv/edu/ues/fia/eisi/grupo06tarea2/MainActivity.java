@@ -54,10 +54,18 @@ public class MainActivity extends AppCompatActivity
         mNotifyMgr.notify(mNotificationId,mBuilder.build());
     }
 
+    //Boton para iniciar el pedido
     public  void iniciarPedido(View v)
     {
         Intent ints = new Intent(this,MenuPrincipal.class);
         startActivity(ints);
+
+    }
+    //Boton para datos curiosos sobre las pupusas
+    public  void datosPupas(View v)
+    {
+        Intent inte = new Intent(this,DatosCuriosos.class);
+        startActivity(inte);
 
 
     }

@@ -20,4 +20,10 @@
     <string name="wa">WhatsApp: 7551-4171</string>
     <string name="tele">Teléfono fijo: 2262-7891</string>
     <string name="encargar">Puedes hacer tus pedidos de pupusas para una celebración con una semana de anticipación</string>
+    <string name="datosCuriosos">Datos sobre las pupusas</string>
+    <string name="dato1">1. Elaboración: Las pupusas son hechas de harina de arroz o maíz, y rellenas de las especialidades se soliciten, generalmente son revueltas (queso, frijoles y chicharrón), de queso o frijol con queso, acompañadas con curtido y salsa</string>
+    <string name="dato2">2. Su origen: La palabra pupusa proviene del pipil “pupusawa”, que en español se pronuncia “popotlax”, del náhuatl “Popotl” que significa grande, relleno y de “Tlaxkalli” o tortilla.</string>
+    <string name="dato3">3. Especialidades: Con el tiempo la oferta se amplió a queso con loroco, queso con jalapeño, ajo, albahaca, mora, chipilín, cochinito, mora, hongos, ayote, pollo, camarón, chicharrón con queso, chicharrón con frijoles, la pupusa loca (es una pupusa del tamaño de una pizza personal con muchos ingredientes), entre otras especialidades.</string>
+    <string name="dato4">4. Tiene su día: En el 2005, por decreto legislativo se declaró como un platillo nacional de El Salvador, por lo que cada segundo domingo del mes de noviembre se conmemora con diversas actividades ligadas a la elaboración de pupusas.</string>
+    <string name="porcentajes">Información nutricional:</string>
 </resources>
