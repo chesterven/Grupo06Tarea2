@@ -12,4 +12,11 @@
     <string name="titulo">PUPASYA!</string>
     <string name="tituloMaiz">Ordene sus pupusas de maíz</string>
     <string name="tituloArroz">Ordene sus pupusas de arroz</string>
+    <string name="info">Información</string>
+    <string name="horarios">Horarios:</string>
+    <string name="semana">Lunes a Jueves: 6:00 am a 9:00 pm </string>
+    <string name="findesemana">Viernes a Domingo: 6:00 am a 10:30 pm </string>
+    <string name="telefonos">Teléfonos:</string>
+    <string name="wa">WhatsApp: 7551-4171</string>
+    <string name="tele">Teléfono fijo: 2262-7891</string>
 </resources>
