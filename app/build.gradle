@@ -30,4 +30,5 @@ dependencies {
     //Uso de la libreria de achartengine
     implementation files('libs/achartengine-1.0.0.jar')
     //uso de la libreria para justificar texto
-    implementation 'com.codesgood:justifiedtextview:1.1.0'}
+    implementation 'com.codesgood:justifiedtextview:1.1.0'
+}
