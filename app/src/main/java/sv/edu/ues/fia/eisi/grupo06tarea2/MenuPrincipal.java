@@ -11,15 +11,14 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 public class MenuPrincipal extends AppCompatActivity {
 private ImageView imagenPedido;
-private EditText nombre;
-private EditText apellido;
+private EditText nombreyApellido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         imagenPedido = (ImageView) findViewById(R.id.imagenPedido);
-        nombre = (EditText) findViewById(R.id.nombreUsuario);
-        apellido=(EditText) findViewById(R.id.apellidoUsuario);
+        nombreyApellido = (EditText) findViewById(R.id.nombreyApellidoUsuario);
+
 
         String url="https://prodimages.restaurants-sign.com/350/l717865-pupusas-animated-led-sign.gif";
 
@@ -30,7 +29,7 @@ private EditText apellido;
     }
     public void empezar (View v)
     {
-        if (apellido.getText().toString().equals("") | nombre.getText().equals(""))
+        if (nombreyApellido.getText().toString().equals(""))
         {
             Toast.makeText(this, "Debe ingresar su nombre y apellido", Toast.LENGTH_SHORT).show();
         }

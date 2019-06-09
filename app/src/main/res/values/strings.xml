@@ -4,7 +4,7 @@
     <string name="arroz">Pupusas de arroz</string>
     <string name="empezar">Empezar</string>
     <string name="ingresar">Ingrese sus datos:</string>4
-    <string name="nombre">Nombre:</string>
+    <string name="nombreyapellido">Nombre y apellido:</string>
     <string name="apellido">Apellido:</string>
     <string name="llevar">Para llevar:</string>
     <string name="empezarPedido">Empezar pedido</string>
