@@ -34,7 +34,7 @@ private EditText nombreyApellido;
             Toast.makeText(this, "Debe ingresar su nombre y apellido", Toast.LENGTH_SHORT).show();
         }
         else {
-            Intent inte1 = new Intent(this, PupusasMaiz.class);
+            Intent inte1 = new Intent(this, CrearPedidos.class);
             startActivity(inte1);
         }
     }
