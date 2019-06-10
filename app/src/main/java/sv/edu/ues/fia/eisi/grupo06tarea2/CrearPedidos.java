@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +35,7 @@ public class CrearPedidos extends AppCompatActivity {
     Spinner pupas,masa;
     EditText cantidad;
     ListView lista;
+    ImageView imagenAnotar;
     //Almacenar el id de la orden de la pantalla anterior
     String idOrden;
 
@@ -41,7 +44,7 @@ public class CrearPedidos extends AppCompatActivity {
     ArrayList<String> masas = new ArrayList<String>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     RequestQueue requestQueue;
-    String URL="http://192.168.1.12:80/pupasWeb/mostrarEspecialidades.php/";
+    String URL="http://192.168.1.6:80/pupasWeb/mostrarEspecialidades.php/";
     ArrayAdapter<String> adaptadorList;
     int i=0;
 
@@ -56,6 +59,16 @@ public class CrearPedidos extends AppCompatActivity {
         masa = (Spinner) findViewById(R.id.masa);
         cantidad = (EditText) findViewById(R.id.editCantidad);
         lista = (ListView) findViewById(R.id.listaPedido);
+
+
+        //Para cargar la imagen al activity
+
+        imagenAnotar=(ImageView)  findViewById(R.id.imagenAnotar);
+        String url="https://cdn.icon-icons.com/icons2/46/PNG/128/Write_editnote_writ_9515.png";
+
+        Glide.with(this)
+                .load(url)
+                .into(imagenAnotar);
 
         masas.add("Seleccione tipo de masa");
         masas.add("Maiz");
@@ -94,7 +107,7 @@ public class CrearPedidos extends AppCompatActivity {
 
     public void guardarPedido(View view) {
         for(int x=0; x<pedidoLista.size();x++) {
-            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarPedido.php/");
+            ejecutarServicio("http://192.168.1.6:80/pupasWeb/insertarPedido.php/");
         }
 
 
@@ -108,6 +121,7 @@ public class CrearPedidos extends AppCompatActivity {
 
         adaptadorList = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,pedidoLista);
         lista.setAdapter(adaptadorList);
+
     }
 
     private void loadEspecialidades(){

@@ -53,7 +53,7 @@ RequestQueue requestQueue;
         }
         else {
 
-            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarOrden.php/");
+            ejecutarServicio("http://192.168.1.6:80/pupasWeb/insertarOrden.php/");
 
 
 

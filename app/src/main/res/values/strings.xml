@@ -2,7 +2,7 @@
     <string name="app_name">Grupo06Tarea2</string>
     <string name="bienvenidos">Bienvenidos a la aplicación</string>
     <string name="arroz">Pupusas de arroz</string>
-    <string name="empezar">Empezar</string>
+    <string name="guardarDatos">Guardar Datos</string>
     <string name="ingresar">Ingrese sus datos:</string>4
     <string name="nombreyapellido">Nombre y apellido:</string>
     <string name="apellido">Apellido:</string>
@@ -31,4 +31,5 @@
     <string name="masa">Masa:</string>
     <string name="cantidad">Cantidad:</string>
     <string name="detalle">Detalle del pedido</string>
+    <string name="iniciarPedido">INICIAR PEDIDO</string>
 </resources>

@@ -114,65 +114,67 @@
     </TableRow>
 
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        android:gravity="center">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:weightSum="4">
 
 
-        <ImageButton
-            android:onClick="agregarPedido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_input_add" />
-    </TableRow>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="agregarPedido"
+                app:srcCompat="@android:drawable/ic_input_add" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            >
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
 
-    <TableRow
+                android:layout_height="wrap_content"
+                android:text="@string/detalle"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+        </TableRow>
+        <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="15dp"
-        >
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-
-        android:layout_height="wrap_content"
-        android:text="@string/detalle"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        android:gravity="center"
-        />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
        >
 
 
         <ListView
             android:id="@+id/listaPedido"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="300dp" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="15dp">
+        android:weightSum="4"
+        android:layout_marginTop="5dp">
 
 
         <ImageButton
             android:onClick="guardarPedido"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_save" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/guardado" />
     </TableRow>
 
 

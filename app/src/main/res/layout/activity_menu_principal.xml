@@ -121,21 +121,23 @@ android:layout_height="match_parent">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@string/empezarPedido" />
+            android:text="@string/guardarDatos" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="15dp">
+        android:gravity="right"
+        android:weightSum="4"
+        android:layout_marginTop="50dp">
 
         <Button
             android:onClick="pasarOtra"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.5"
             android:textColor="@color/colorPrimaryDark"
-            android:text="Pasar pantalla" />
+            android:text="@string/iniciarPedido" />
     </TableRow>
 
 
