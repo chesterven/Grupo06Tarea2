@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,6 +26,7 @@ public class MenuPrincipal extends AppCompatActivity {
 private ImageView imagenPedido;
 private EditText nombreyApellido;
 private CheckBox llevar;
+private Button boton,botonGuardar;
     String id="";
 
 //Consulta en cola para webService
@@ -36,6 +38,8 @@ RequestQueue requestQueue;
         imagenPedido = (ImageView) findViewById(R.id.imagenPedido);
         nombreyApellido = (EditText) findViewById(R.id.nombreyApellidoUsuario);
         llevar = (CheckBox) findViewById(R.id.checkBoxLlevar);
+        boton = (Button) findViewById(R.id.botonIniciar);
+        botonGuardar = (Button) findViewById(R.id.botonGuardar);
 
 
         String url="https://prodimages.restaurants-sign.com/350/l717865-pupusas-animated-led-sign.gif";
@@ -53,10 +57,9 @@ RequestQueue requestQueue;
         }
         else {
 
-            ejecutarServicio("http://192.168.1.6:80/pupasWeb/insertarOrden.php/");
-
-
-
+            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarOrden.php/");
+            boton.setVisibility(View.VISIBLE);
+            botonGuardar.setVisibility(View.INVISIBLE);
         }
 
 

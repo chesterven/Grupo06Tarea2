@@ -117,6 +117,7 @@ android:layout_height="match_parent">
         android:layout_marginTop="15dp">
 
         <Button
+            android:id="@+id/botonGuardar"
             android:onClick="empezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,12 +133,14 @@ android:layout_height="match_parent">
         android:layout_marginTop="50dp">
 
         <Button
-            android:onClick="pasarOtra"
+            android:id="@+id/botonIniciar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
+            android:onClick="pasarOtra"
+            android:text="@string/iniciarPedido"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@string/iniciarPedido" />
+            android:visibility="invisible" />
     </TableRow>
 
 

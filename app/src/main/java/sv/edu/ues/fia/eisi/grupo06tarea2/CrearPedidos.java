@@ -44,7 +44,7 @@ public class CrearPedidos extends AppCompatActivity {
     ArrayList<String> masas = new ArrayList<String>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     RequestQueue requestQueue;
-    String URL="http://192.168.1.6:80/pupasWeb/mostrarEspecialidades.php/";
+    String URL="http://192.168.1.12:80/pupasWeb/mostrarEspecialidades.php/";
     ArrayAdapter<String> adaptadorList;
     int i=0;
 
@@ -107,7 +107,7 @@ public class CrearPedidos extends AppCompatActivity {
 
     public void guardarPedido(View view) {
         for(int x=0; x<pedidoLista.size();x++) {
-            ejecutarServicio("http://192.168.1.6:80/pupasWeb/insertarPedido.php/");
+            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarPedido.php/");
         }
 
 
@@ -115,15 +115,22 @@ public class CrearPedidos extends AppCompatActivity {
     }
 
     public void agregarPedido(View view) {
-        String eleccion = pupas.getSelectedItem().toString();
-        String[]partEleccion = eleccion.split(" ");
-        pedidoLista.add(eleccion+" "+cantidad.getText().toString()+" "+masa.getSelectedItem().toString());
+        if ((cantidad.getText().toString().equals("") | masa.getSelectedItem().toString().equals("Seleccione tipo de masa") | pupas.getSelectedItem().toString().equals("Seleccione pupusa"))) {
+            Toast.makeText(this, "Seleccione masa,pupusa o ingrese cantidad", Toast.LENGTH_SHORT).show();
+        } else {
+            String eleccion = pupas.getSelectedItem().toString();
+            String[] partEleccion = eleccion.split(" ");
+            pedidoLista.add(eleccion + " " + cantidad.getText().toString() + " " + masa.getSelectedItem().toString());
 
-        adaptadorList = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,pedidoLista);
-        lista.setAdapter(adaptadorList);
+            adaptadorList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidoLista);
+            lista.setAdapter(adaptadorList);
+            cantidad.setText("");
+            pupas.setSelection(0);
+            masa.setSelection(0);
+
+        }
 
     }
-
     private void loadEspecialidades(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
