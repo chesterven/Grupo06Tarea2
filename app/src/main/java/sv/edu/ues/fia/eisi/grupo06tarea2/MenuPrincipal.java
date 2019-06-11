@@ -57,7 +57,7 @@ RequestQueue requestQueue;
         }
         else {
 
-            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarOrden.php/");
+            ejecutarServicio("http://172.16.63.39:80/pupasWeb/insertarOrden.php/");
             boton.setVisibility(View.VISIBLE);
             botonGuardar.setVisibility(View.INVISIBLE);
         }

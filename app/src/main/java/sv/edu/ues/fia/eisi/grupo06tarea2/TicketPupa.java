@@ -9,20 +9,30 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class TicketPupa extends AppCompatActivity {
-    ArrayList<String> pedidoLista = new ArrayList<String>();
-    ArrayAdapter<String> adaptadorList;
-    ListView listaPedido;
+    ArrayList<String> pedidoPupusa = new ArrayList<String>();
+    ArrayList<String> pedidoBebida = new ArrayList<String>();
+    String nOrden;
+    ArrayAdapter<String> adaptadorListPupas, adaptadorListBebidas;
+    ListView listaPupusas,listaBebidas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_pupa);
         Intent recibir = getIntent();
-        pedidoLista = recibir.getStringArrayListExtra("pupusa");
+        pedidoPupusa = recibir.getStringArrayListExtra("pupusa");
+        pedidoBebida = recibir.getStringArrayListExtra("bebida");
+        nOrden = recibir.getStringExtra("idOrden");
 
-        listaPedido = (ListView) findViewById(R.id.listaTicket);
 
-        adaptadorList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidoLista);
-        listaPedido.setAdapter(adaptadorList);
+
+        listaPupusas = (ListView) findViewById(R.id.listaTicketPupusas);
+        listaBebidas = (ListView) findViewById(R.id.listaTicketBebidas);
+
+        adaptadorListBebidas = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, pedidoBebida);
+        adaptadorListPupas = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidoPupusa);
+        listaPupusas.setAdapter(adaptadorListPupas);
+        listaBebidas.setAdapter(adaptadorListBebidas);
     }
 }

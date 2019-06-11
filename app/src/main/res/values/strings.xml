@@ -37,4 +37,11 @@
     <string name="btnplay">Play</string>
     <string name="btnstop">Stop</string>
     <string name="escucha">Escucha una de nuestras canciones favoritas mientras realizas tu orden</string>
+    <string name="DetallePedidoTitulo">Detalle del pedido</string>
+    <string name="detallePupusa">Detalle de pupusas</string>
+    <string name="detalleBebida">Detalle de bebidas</string>
+    <string name="totalPupusas">Total pupusas: $</string>
+    <string name="totalBebidas">Total bebidas: $ </string>
+    <string name="BebidaTitulo">Seleccione las bebidas que desee</string>
+    <string name="totalPedido">TOTAL A CANCELAR: $</string>
 </resources>
