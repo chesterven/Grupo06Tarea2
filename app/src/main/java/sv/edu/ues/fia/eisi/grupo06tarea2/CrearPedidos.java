@@ -112,6 +112,10 @@ public class CrearPedidos extends AppCompatActivity {
 
 
         Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+        Intent bebida = new Intent(this,PedidoBebida.class);
+        bebida.putExtra("pedido",pedidoLista);
+        bebida.putExtra("idOrden", idOrden);
+        startActivity(bebida);
     }
 
     public void agregarPedido(View view) {
