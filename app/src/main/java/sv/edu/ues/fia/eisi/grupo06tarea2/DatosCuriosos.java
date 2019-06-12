@@ -33,45 +33,14 @@ public class DatosCuriosos extends AppCompatActivity {
         video = (VideoView) findViewById(R.id.videoView);
         String path = "android.resource://" + getPackageName() + "/" + R.raw.pupas;
         video.setVideoURI(Uri.parse(path));
-        video.start();
 
-        //Obtenemos los tres botones de la interfaz
-        btnPlay= (ImageButton)findViewById(R.id.buttonPlay);
-        btnStop= (ImageButton)findViewById(R.id.buttonStop);
-        btnPause= (ImageButton)findViewById(R.id.buttonPause);
+        MediaController mediaController = new MediaController(this);
+        video.setMediaController(mediaController);
+        mediaController.setAnchorView(video);
 
-        //Y les asignamos el controlador de eventos
-        btnPlay.setOnClickListener(onClick);
-        btnStop.setOnClickListener(onClick);
-        btnPause.setOnClickListener(onClick);
+
 
     }
-    View.OnClickListener onClick=new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //Comprobamos el identificador del boton que ha llamado al evento para ver
-            //cual de los botones es y ejecutar la acción correspondiente
-            switch (v.getId()) {
-                case R.id.buttonPlay:
-                    //Iniciamos el video
-                    video.start();
-                    break;
-                case R.id.buttonPause:
-                    //Pausamos el video
-                    video.pause();
-                    break;
-                case R.id.buttonStop:
-                    //Paramos el video y volvemos a inicializar
 
-                    video.stopPlayback();
-                    video.start();
-                    video.seekTo(0);
-
-
-                    break;
-
-            }
-        }
-    };
 
 }
