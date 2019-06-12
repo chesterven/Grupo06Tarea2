@@ -35,7 +35,7 @@ public class PedidoBebida extends AppCompatActivity {
     ArrayList<String> pedidoLista = new ArrayList<String>();
     ArrayList<String> bebidasLista = new ArrayList<String>();
     ArrayList<String> pedidoBebida = new ArrayList<String>();
-    String URL="http://172.16.63.39:80/pupasWeb/mostrarBebidas.php/";
+    String URL="http://192.168.0.50:80/pupasWeb/mostrarBebidas.php/";
     ArrayAdapter<String> adaptadorList;
     RequestQueue requestQueue;
     int i=0;
@@ -81,7 +81,7 @@ public class PedidoBebida extends AppCompatActivity {
 
     public void guardarBebidas(View view) {
         for(int x=0; x<pedidoBebida.size();x++) {
-            ejecutarServicio("http://172.16.63.39:80/pupasWeb/insertarBebida.php/");
+            ejecutarServicio("http://192.168.0.50:80/pupasWeb/insertarBebida.php/");
         }
 
 

@@ -44,7 +44,7 @@ public class CrearPedidos extends AppCompatActivity {
     ArrayList<String> masas = new ArrayList<String>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     RequestQueue requestQueue;
-    String URL="http://172.16.63.39:80/pupasWeb/mostrarEspecialidades.php/";
+    String URL="http://192.168.0.50:80/pupasWeb/mostrarEspecialidades.php/";
     ArrayAdapter<String> adaptadorList;
     int i=0;
 
@@ -107,7 +107,7 @@ public class CrearPedidos extends AppCompatActivity {
 
     public void guardarPedido(View view) {
         for(int x=0; x<pedidoLista.size();x++) {
-            ejecutarServicio("http://172.16.63.39:80/pupasWeb/insertarPedido.php/");
+            ejecutarServicio("http://192.168.0.50:80/pupasWeb/insertarPedido.php/");
         }
 
 
