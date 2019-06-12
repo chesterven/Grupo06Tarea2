@@ -44,4 +44,5 @@
     <string name="totalBebidas">Total bebidas: $ </string>
     <string name="BebidaTitulo">Seleccione las bebidas que desee</string>
     <string name="totalPedido">TOTAL A CANCELAR: $</string>
+    <string name="nOrden"># Orden:</string>
 </resources>

@@ -1,9 +1,12 @@
 package sv.edu.ues.fia.eisi.grupo06tarea2;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,10 +35,11 @@ public class PedidoBebida extends AppCompatActivity {
     Spinner bebidasSpinner;
     ListView listaBebidas;
     ImageView bebida;
+    ArrayList<Integer> idBebida = new ArrayList<Integer>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     ArrayList<String> bebidasLista = new ArrayList<String>();
     ArrayList<String> pedidoBebida = new ArrayList<String>();
-    String URL="http://192.168.0.50:80/pupasWeb/mostrarBebidas.php/";
+    String URL="http://192.168.1.12:80/pupasWeb/mostrarBebidas.php/";
     ArrayAdapter<String> adaptadorList;
     RequestQueue requestQueue;
     int i=0;
@@ -60,6 +64,32 @@ public class PedidoBebida extends AppCompatActivity {
         Glide.with(this)
                 .load(url)
                 .into(bebida);
+
+        listaBebidas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final int posicion=i;
+
+                AlertDialog.Builder dialogo1 = new AlertDialog.Builder(PedidoBebida.this);
+                dialogo1.setTitle("Importante");
+                dialogo1.setMessage("¿ Eliminara esta bebida de su pedido?");
+                dialogo1.setCancelable(false);
+                dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                        pedidoBebida.remove(posicion);
+                        idBebida.remove(posicion);
+                        adaptadorList.notifyDataSetChanged();
+                    }
+                });
+                dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                    }
+                });
+                dialogo1.show();
+
+                return false;
+            }
+        });
     }
 
     public void agregarBebida(View view) {
@@ -67,6 +97,7 @@ public class PedidoBebida extends AppCompatActivity {
             Toast.makeText(this, "Seleccione bebida o ingrese cantidad", Toast.LENGTH_SHORT).show();
         } else {
             String eleccion = bebidasSpinner.getSelectedItem().toString();
+            idBebida.add(bebidasSpinner.getSelectedItemPosition());
             String[] partEleccion = eleccion.split(" ");
             pedidoBebida.add(eleccion + " " + bebidaCantidad.getText().toString());
 
@@ -81,7 +112,7 @@ public class PedidoBebida extends AppCompatActivity {
 
     public void guardarBebidas(View view) {
         for(int x=0; x<pedidoBebida.size();x++) {
-            ejecutarServicio("http://192.168.0.50:80/pupasWeb/insertarBebida.php/");
+            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarBebida.php/");
         }
 
 
@@ -107,7 +138,7 @@ public class PedidoBebida extends AppCompatActivity {
                         String nombre = bebidasObject.getString("nombre");
                         double precio = bebidasObject.getDouble("precioUni");
 
-                        bebidasLista.add(id+" "+nombre+" "+precio);
+                        bebidasLista.add(nombre+" "+precio);
 
 
 
@@ -154,7 +185,7 @@ public class PedidoBebida extends AppCompatActivity {
                 parametros.put("order_id", idOrden);
                 String pedido = pedidoBebida.get(i);
                 String[] partPedido = pedido.split(" ");
-                parametros.put("drink_id",partPedido[partPedido.length-partPedido.length]);
+                parametros.put("drink_id",idBebida.get(i).toString());
                 parametros.put("cantidad", partPedido[partPedido.length-1]);
                 i++;
 
