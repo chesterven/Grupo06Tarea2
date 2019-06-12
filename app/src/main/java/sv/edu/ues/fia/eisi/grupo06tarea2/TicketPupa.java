@@ -8,10 +8,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -19,6 +22,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TicketPupa extends AppCompatActivity {
     ArrayList<String> pedidoPupusa = new ArrayList<String>();
@@ -65,6 +70,8 @@ public class TicketPupa extends AppCompatActivity {
         calcularTotalPupusas();
         calcularTotalBebida();
         totalOrden();
+
+        ejecutarServicio("http://192.168.1.12:80/pupasWeb/guardarTotal.php/");
     }
     public void calcularTotalPupusas(){
         for(int i=0;i<pedidoPupusa.size();i++){
@@ -115,5 +122,31 @@ public class TicketPupa extends AppCompatActivity {
         requestQueue.add(jsonArrayRequest);
     }
 
+    private void ejecutarServicio(String URL) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(TicketPupa.this, "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(TicketPupa.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                parametros.put("id", ticketOrden.getText().toString());
+                parametros.put("total",tOrden.getText().toString());
+                return parametros;
+            }
+        };
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
 
 }
