@@ -106,26 +106,35 @@
             android:textStyle="italic"
             android:gravity="center"/>
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
         android:gravity="center"
-        android:weightSum="2">
+        android:weightSum="1.5">
 
-        <Button
+        <ImageButton
             android:id="@+id/play"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="@string/btnplay" />
+            android:background="@drawable/play" />
 
-        <Button
+        <ImageButton
+            android:id="@+id/pausa"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/pausa" />
+
+        <ImageButton
             android:id="@+id/stop"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="@string/btnstop" />
+            android:background="@drawable/stop" />
     </TableRow>
 
 </TableLayout>

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
@@ -18,8 +19,9 @@ public class MainActivity extends AppCompatActivity
 {
     //Variables para el audio
     MediaPlayer Media;
-    Button Play;
-    Button Stop;
+    ImageButton Play;
+    ImageButton Stop;
+    ImageButton Pausa;
     //Variable utilizada en la libreria GLIDE
     private ImageView fotoImagenView;
     //Variables para la notificacion PUSH
@@ -30,10 +32,12 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Para reproducir audio
-        Play=(Button) findViewById(R.id.play);
-        Stop=(Button) findViewById(R.id.stop);
+        Play=(ImageButton) findViewById(R.id.play);
+        Stop=(ImageButton) findViewById(R.id.stop);
+        Pausa=(ImageButton) findViewById(R.id.pausa);
         Play.setOnClickListener(onClick);
         Stop.setOnClickListener(onClick);
+        Pausa.setOnClickListener(onClick);
         Media=MediaPlayer.create(getApplicationContext(), R.raw.music);
 
         //***************Codigo para utilizar la libreria GLIDE******************
@@ -88,29 +92,31 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void onClick(View v) {
 // TODO Auto-generated method stub
-            if (v.getId()==R.id.play){
-                if (Media.isPlaying()){
-                    Media.pause();
-                    Play.setText("Play");
+                if(v.getId()==R.id.pausa) {
+                    if (Media.isPlaying()) {
+                        Media.pause();
+                        //Play.setText("Play");
+                    }
                 }
-                else{
+                else
+                    if(v.getId()==R.id.play){
                     Media.start();
-                    Play.setText("Pause");
+                    //Play.setText("Pause");
                 }
-            }
-            else{
-                Media.stop();
-                Play.setText("Play");
-                try{
-                    Media.prepare();
-                }
-                catch(IllegalStateException e){
-                    e.printStackTrace();
-                }
-                catch(IOException e){
-                    e.printStackTrace();
-                }
-            }
+
+            else {
+                        if (v.getId() == R.id.stop) {
+                            Media.stop();
+                            //Play.setText("Play");
+                            try {
+                                Media.prepare();
+                            } catch (IllegalStateException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
         }
     };
 
