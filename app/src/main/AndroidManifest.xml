@@ -3,7 +3,9 @@
     package="sv.edu.ues.fia.eisi.grupo06tarea2">
     <!-- Permiso de internet para la aplicacion -->
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!--Permisos para el video-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
