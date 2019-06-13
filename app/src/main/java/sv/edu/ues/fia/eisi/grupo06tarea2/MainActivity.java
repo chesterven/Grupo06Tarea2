@@ -120,4 +120,8 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
+    public void irQR(View v){
+        Intent intentLectorQR= new Intent(this,LectorQR.class);
+        startActivity(intentLectorQR);
+    }
 }

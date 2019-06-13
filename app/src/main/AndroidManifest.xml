@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sv.edu.ues.fia.eisi.grupo06tarea2">
     <!-- Permiso de internet para la aplicacion -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--Permisos para el video-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Permisos para el video -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PedidoBebida"></activity>
+        <activity android:name=".LectorQR"></activity>
+        <activity android:name=".PedidoBebida" />
         <activity android:name=".TicketPupa" />
         <activity android:name=".CrearPedidos" />
         <activity android:name=".DatosCuriosos" />
