@@ -124,4 +124,9 @@ public class MainActivity extends AppCompatActivity
         Intent intentLectorQR= new Intent(this,LectorQR.class);
         startActivity(intentLectorQR);
     }
+
+    public void consultarPedido(View v){
+        Intent intentBuscar = new Intent(this,ConsultarDespachado.class);
+        startActivity(intentBuscar);
+    }
 }

@@ -46,4 +46,8 @@
     <string name="totalPedido">TOTAL A CANCELAR: $</string>
     <string name="nOrden"># Orden:</string>
     <string name="irLectorQR">Lector QR</string>
+    <string name="Despachado">Consulte su pedido</string>
+    <string name="Consultar_Pedido">Consultar Pedido</string>
+    <string name="Estado">Despachado:</string>
+
 </resources>
