@@ -123,7 +123,7 @@
 
             <ListView
                 android:id="@+id/listaTicketPupusas"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="300dp" />
         </TableRow>
 
@@ -155,7 +155,7 @@
 
             <ListView
                 android:id="@+id/listaTicketBebidas"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="300dp" />
         </TableRow>
 

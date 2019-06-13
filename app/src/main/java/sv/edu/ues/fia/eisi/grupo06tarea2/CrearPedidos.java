@@ -130,8 +130,7 @@ public class CrearPedidos extends AppCompatActivity {
         } else {
             String eleccion = pupas.getSelectedItem().toString();
 
-            String[] partEleccion = eleccion.split(" ");
-            pedidoLista.add(eleccion + " " + cantidad.getText().toString() + " " +masa.getSelectedItem().toString());
+            pedidoLista.add(eleccion + "        " + cantidad.getText().toString() + "        " +masa.getSelectedItem().toString());
 
             adaptadorList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidoLista);
             lista.setAdapter(adaptadorList);
@@ -157,7 +156,7 @@ public class CrearPedidos extends AppCompatActivity {
                         String especialidad = especialidadObject.getString("especialidad");
                         double precio = especialidadObject.getDouble("precioUni");
                         String photo = especialidadObject.getString("photo");
-                        stringEspecialidades.add(id+" "+especialidad+" "+precio);
+                        stringEspecialidades.add(id+" "+especialidad+"        "+precio);
                         ;
 
 
@@ -205,12 +204,14 @@ public class CrearPedidos extends AppCompatActivity {
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("order_id", idOrden);
                 String pedido = pedidoLista.get(i);
-                String[] partPedido = pedido.split(" ");
+                String[] partPedidoIndex = pedido.split(" ");
+                String [] partPedidoCuerpo = pedido.split("        ");
 
 
-                parametros.put("specialty_id",partPedido[0]);
-                parametros.put("cantidad", partPedido[partPedido.length-2]);
-                parametros.put("masa", partPedido[partPedido.length-1]);
+
+                parametros.put("specialty_id",partPedidoIndex[0]);
+                parametros.put("cantidad", partPedidoCuerpo[partPedidoCuerpo.length-2]);
+                parametros.put("masa", partPedidoCuerpo[partPedidoCuerpo.length-1]);
                 i++;
 
                 return parametros;

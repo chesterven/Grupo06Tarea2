@@ -76,7 +76,7 @@ public class TicketPupa extends AppCompatActivity {
     public void calcularTotalPupusas(){
         for(int i=0;i<pedidoPupusa.size();i++){
             String pupa = pedidoPupusa.get(i);
-            String[] partPupa = pupa.split(" ");
+            String[] partPupa = pupa.split("        ");
             totalPupusas = totalPupusas + (Float.valueOf(partPupa[partPupa.length-2])*Float.valueOf(partPupa[partPupa.length-3]));
         }
         tPupas.setText(String.valueOf(totalPupusas));
@@ -85,7 +85,7 @@ public class TicketPupa extends AppCompatActivity {
     public void calcularTotalBebida(){
         for(int i=0;i<pedidoBebida.size();i++){
             String beb = pedidoBebida.get(i);
-            String[] partBeb = beb.split(" ");
+            String[] partBeb = beb.split("        ");
             totalBebidas = totalBebidas +(Float.valueOf(partBeb[partBeb.length-1])*Float.valueOf(partBeb[partBeb.length-2]));
         }
         tBebidas.setText(String.valueOf(totalBebidas));

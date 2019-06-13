@@ -98,7 +98,7 @@ public class PedidoBebida extends AppCompatActivity {
             String eleccion = bebidasSpinner.getSelectedItem().toString();
 
             String[] partEleccion = eleccion.split(" ");
-            pedidoBebida.add(eleccion + " " + bebidaCantidad.getText().toString());
+            pedidoBebida.add(eleccion + "        " + bebidaCantidad.getText().toString());
 
             adaptadorList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidoBebida);
             listaBebidas.setAdapter(adaptadorList);
@@ -137,7 +137,7 @@ public class PedidoBebida extends AppCompatActivity {
                         String nombre = bebidasObject.getString("nombre");
                         double precio = bebidasObject.getDouble("precioUni");
 
-                        bebidasLista.add(id+" "+nombre+" "+precio);
+                        bebidasLista.add(id+" "+nombre+"        "+precio);
 
 
 
@@ -183,9 +183,10 @@ public class PedidoBebida extends AppCompatActivity {
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("order_id", idOrden);
                 String pedido = pedidoBebida.get(i);
-                String[] partPedido = pedido.split(" ");
-                parametros.put("drink_id",partPedido[0]);
-                parametros.put("cantidad", partPedido[partPedido.length-1]);
+                String[] partPedidoIndex = pedido.split(" ");
+                String [] partPedidoCuerpo = pedido.split("        ");
+                parametros.put("drink_id",partPedidoIndex[0]);
+                parametros.put("cantidad", partPedidoCuerpo[partPedidoCuerpo.length-1]);
                 i++;
 
                 return parametros;
