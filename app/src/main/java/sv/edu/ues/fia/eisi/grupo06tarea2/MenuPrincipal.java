@@ -70,7 +70,7 @@ RequestQueue requestQueue;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(MenuPrincipal.this, "OPERACION EXITOSA"+response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MenuPrincipal.this, "Orden: "+response, Toast.LENGTH_SHORT).show();
                 id=response;
             }
         }, new Response.ErrorListener() {

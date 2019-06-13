@@ -127,7 +127,7 @@ public class TicketPupa extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Toast.makeText(TicketPupa.this, "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TicketPupa.this, "Orden completa guardada", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
 

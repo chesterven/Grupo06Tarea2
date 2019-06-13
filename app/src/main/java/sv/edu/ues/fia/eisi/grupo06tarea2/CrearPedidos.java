@@ -117,7 +117,6 @@ public class CrearPedidos extends AppCompatActivity {
         }
 
 
-        Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
         Intent bebida = new Intent(this,PedidoBebida.class);
         bebida.putExtra("pedido",pedidoLista);
         bebida.putExtra("idOrden", idOrden);
@@ -190,7 +189,7 @@ public class CrearPedidos extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Toast.makeText(CrearPedidos.this, "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrearPedidos.this, "Pupusa guardada", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
 

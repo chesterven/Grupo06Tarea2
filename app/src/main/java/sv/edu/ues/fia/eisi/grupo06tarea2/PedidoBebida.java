@@ -115,7 +115,7 @@ public class PedidoBebida extends AppCompatActivity {
         }
 
 
-        Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+
         Intent ticket = new Intent(this,TicketPupa.class);
         ticket.putExtra("pupusa",pedidoLista);
         ticket.putExtra("bebida", pedidoBebida);
@@ -169,7 +169,7 @@ public class PedidoBebida extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Toast.makeText(PedidoBebida.this, "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PedidoBebida.this, "Bebida guardada", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
 
