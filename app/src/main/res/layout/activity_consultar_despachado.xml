@@ -33,7 +33,7 @@
             android:weightSum="4">
 
             <ImageView
-                android:id="@+id/imagenPedido"
+                android:id="@+id/imagenConsulta"
                 android:layout_height="125dp"
                 android:layout_width="75dp"
                 android:layout_weight="4"

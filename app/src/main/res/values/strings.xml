@@ -45,9 +45,10 @@
     <string name="BebidaTitulo">Seleccione las bebidas que desee</string>
     <string name="totalPedido">TOTAL A CANCELAR: $</string>
     <string name="nOrden"># Orden:</string>
-    <string name="irLectorQR">Lector QR</string>
+    <string name="irLectorQR">Lector QR para ir a nuestras redes sociales</string>
     <string name="Despachado">Consulte su pedido</string>
     <string name="Consultar_Pedido">Consultar Pedido</string>
     <string name="Estado">Despachado:</string>
+    <string name="historia">Historia de las pupusas</string>
 
 </resources>

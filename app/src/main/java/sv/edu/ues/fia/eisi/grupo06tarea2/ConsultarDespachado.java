@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +24,7 @@ public class ConsultarDespachado extends AppCompatActivity {
     TextView nombre, despachado, total;
     EditText idOrden;
     RequestQueue requestQueue;
+    ImageView imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,15 @@ public class ConsultarDespachado extends AppCompatActivity {
         despachado = (TextView) findViewById(R.id.mostrarEstado);
         total = (TextView) findViewById(R.id.mostrarTotal);
         idOrden = (EditText) findViewById(R.id.idOrden);
+        //***************Codigo para utilizar la libreria GLIDE******************
+        imagen = (ImageView) findViewById(R.id.imagenConsulta);
+
+        String url="https://cdn.icon-icons.com/icons2/1918/PNG/512/iconfinder-documents07-1622836_121949.png";
+
+        Glide.with(this)
+                .load(url)
+                .into(imagen);
+
     }
 
     public void consultar(View view) {
