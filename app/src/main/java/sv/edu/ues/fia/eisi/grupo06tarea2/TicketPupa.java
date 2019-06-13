@@ -55,7 +55,7 @@ public class TicketPupa extends AppCompatActivity {
         ticketOrden = (TextView)  findViewById(R.id.ticketOrden);
 
         ticketOrden.setText(nOrden);
-        buscarOrden("http://192.168.1.12:80/pupasWeb/buscarOrden.php?id="+nOrden+"");
+        buscarOrden("https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/buscarOrden.php?id="+nOrden+"");
 
 
         adaptadorListBebidas = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, pedidoBebida);
@@ -71,7 +71,7 @@ public class TicketPupa extends AppCompatActivity {
         calcularTotalBebida();
         totalOrden();
 
-        ejecutarServicio("http://192.168.1.12:80/pupasWeb/guardarTotal.php/");
+        ejecutarServicio("https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/guardarTotal.php/");
     }
     public void calcularTotalPupusas(){
         for(int i=0;i<pedidoPupusa.size();i++){

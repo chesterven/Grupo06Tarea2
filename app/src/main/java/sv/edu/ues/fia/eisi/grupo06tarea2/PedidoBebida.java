@@ -35,11 +35,10 @@ public class PedidoBebida extends AppCompatActivity {
     Spinner bebidasSpinner;
     ListView listaBebidas;
     ImageView bebida;
-    ArrayList<Integer> idBebida = new ArrayList<Integer>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     ArrayList<String> bebidasLista = new ArrayList<String>();
     ArrayList<String> pedidoBebida = new ArrayList<String>();
-    String URL="http://192.168.1.12:80/pupasWeb/mostrarBebidas.php/";
+    String URL="https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/mostrarBebidas.php/";
     ArrayAdapter<String> adaptadorList;
     RequestQueue requestQueue;
     int i=0;
@@ -77,7 +76,7 @@ public class PedidoBebida extends AppCompatActivity {
                 dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogo1, int id) {
                         pedidoBebida.remove(posicion);
-                        idBebida.remove(posicion);
+
                         adaptadorList.notifyDataSetChanged();
                     }
                 });
@@ -97,7 +96,7 @@ public class PedidoBebida extends AppCompatActivity {
             Toast.makeText(this, "Seleccione bebida o ingrese cantidad", Toast.LENGTH_SHORT).show();
         } else {
             String eleccion = bebidasSpinner.getSelectedItem().toString();
-            idBebida.add(bebidasSpinner.getSelectedItemPosition());
+
             String[] partEleccion = eleccion.split(" ");
             pedidoBebida.add(eleccion + " " + bebidaCantidad.getText().toString());
 
@@ -112,7 +111,7 @@ public class PedidoBebida extends AppCompatActivity {
 
     public void guardarBebidas(View view) {
         for(int x=0; x<pedidoBebida.size();x++) {
-            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarBebida.php/");
+            ejecutarServicio("https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/insertarBebida.php/");
         }
 
 
@@ -138,7 +137,7 @@ public class PedidoBebida extends AppCompatActivity {
                         String nombre = bebidasObject.getString("nombre");
                         double precio = bebidasObject.getDouble("precioUni");
 
-                        bebidasLista.add(nombre+" "+precio);
+                        bebidasLista.add(id+" "+nombre+" "+precio);
 
 
 
@@ -185,7 +184,7 @@ public class PedidoBebida extends AppCompatActivity {
                 parametros.put("order_id", idOrden);
                 String pedido = pedidoBebida.get(i);
                 String[] partPedido = pedido.split(" ");
-                parametros.put("drink_id",idBebida.get(i).toString());
+                parametros.put("drink_id",partPedido[0]);
                 parametros.put("cantidad", partPedido[partPedido.length-1]);
                 i++;
 

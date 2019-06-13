@@ -38,7 +38,7 @@ public class CrearPedidos extends AppCompatActivity {
     ImageView imagenAnotar;
 
     //Almacenar el id de la pupusa
-    ArrayList<Integer> idPupusa = new ArrayList<Integer>();
+
     //Almacenar el id de la orden de la pantalla anterior
     String idOrden;
 
@@ -49,7 +49,7 @@ public class CrearPedidos extends AppCompatActivity {
     ArrayList<String> masas = new ArrayList<String>();
     ArrayList<String> pedidoLista = new ArrayList<String>();
     RequestQueue requestQueue;
-    String URL="http://192.168.1.12:80/pupasWeb/mostrarEspecialidades.php/";
+    String URL="https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/mostrarEspecialidades.php/";
     ArrayAdapter<String> adaptadorList;
     int i=0;
 
@@ -96,7 +96,7 @@ public class CrearPedidos extends AppCompatActivity {
                 dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogo1, int id) {
                         pedidoLista.remove(posicion);
-                        idPupusa.remove(posicion);
+
                         adaptadorList.notifyDataSetChanged();
                     }
                 });
@@ -113,7 +113,7 @@ public class CrearPedidos extends AppCompatActivity {
 
     public void guardarPedido(View view) {
         for(int x=0; x<pedidoLista.size();x++) {
-            ejecutarServicio("http://192.168.1.12:80/pupasWeb/insertarPedido.php/");
+            ejecutarServicio("https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/insertarPedido.php/");
         }
 
 
@@ -129,7 +129,7 @@ public class CrearPedidos extends AppCompatActivity {
             Toast.makeText(this, "Seleccione masa,pupusa o ingrese cantidad", Toast.LENGTH_SHORT).show();
         } else {
             String eleccion = pupas.getSelectedItem().toString();
-            idPupusa.add(pupas.getSelectedItemPosition());
+
             String[] partEleccion = eleccion.split(" ");
             pedidoLista.add(eleccion + " " + cantidad.getText().toString() + " " +masa.getSelectedItem().toString());
 
@@ -157,7 +157,7 @@ public class CrearPedidos extends AppCompatActivity {
                         String especialidad = especialidadObject.getString("especialidad");
                         double precio = especialidadObject.getDouble("precioUni");
                         String photo = especialidadObject.getString("photo");
-                        stringEspecialidades.add(especialidad+" "+precio);
+                        stringEspecialidades.add(id+" "+especialidad+" "+precio);
                         ;
 
 
@@ -208,7 +208,7 @@ public class CrearPedidos extends AppCompatActivity {
                 String[] partPedido = pedido.split(" ");
 
 
-                parametros.put("specialty_id",idPupusa.get(i).toString());
+                parametros.put("specialty_id",partPedido[0]);
                 parametros.put("cantidad", partPedido[partPedido.length-2]);
                 parametros.put("masa", partPedido[partPedido.length-1]);
                 i++;
