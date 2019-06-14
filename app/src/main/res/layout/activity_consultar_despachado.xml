@@ -61,7 +61,7 @@
                 android:text="@string/nOrden"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20dp"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:gravity="center"/>
         </TableRow>
 
@@ -104,7 +104,6 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginTop="10dp"
             android:weightSum="4">
 
@@ -116,7 +115,7 @@
                 android:text="@string/nombreyapellido"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20dp"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:gravity="center"/>
 
             <TextView
@@ -126,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="italic"
                 android:gravity="center"/>
         </TableRow>
@@ -134,7 +133,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+
             android:layout_marginTop="10dp"
             android:weightSum="4">
 
@@ -146,7 +145,7 @@
                 android:text="@string/Estado"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20dp"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:gravity="center"/>
 
             <TextView
@@ -156,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="italic"
                 android:gravity="center"/>
         </TableRow>
@@ -174,8 +173,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/totalPedido"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"
-                android:textStyle="italic"
+                android:textSize="17dp"
+                android:textStyle="bold"
                 android:gravity="center"/>
 
             <TextView
