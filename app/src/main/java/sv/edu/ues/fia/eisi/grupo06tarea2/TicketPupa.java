@@ -3,6 +3,7 @@ package sv.edu.ues.fia.eisi.grupo06tarea2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -147,6 +148,11 @@ public class TicketPupa extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
+    }
+    public void menuPrincipal(View v)
+    {
+        Intent ints = new Intent(this,MainActivity.class);
+        startActivity(ints);
     }
 
 }

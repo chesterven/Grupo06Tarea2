@@ -50,5 +50,6 @@
     <string name="Consultar_Pedido">Consultar Pedido</string>
     <string name="Estado">Despachado:</string>
     <string name="historia">Historia de las pupusas</string>
+    <string name="menuPrincipal">MENU PRINCIPAL</string>
 
 </resources>

@@ -44,7 +44,8 @@ public class ConsultarDespachado extends AppCompatActivity {
 
     }
 
-    public void consultar(View view) {
+    public void consultar(View view)
+    {
         buscarOrden("https://eisi.fia.ues.edu.sv/GPO06/pupasWeb/buscarOrden.php?id="+idOrden.getText().toString()+"");
     }
 

@@ -254,6 +254,21 @@
                 android:gravity="center"
                 />
         </TableRow>
-
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:weightSum="4"
+            >
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:text="@string/menuPrincipal"
+            android:onClick="menuPrincipal"
+            tools:ignore="OnClick"
+            />
+        </TableRow>
     </TableLayout>
 </ScrollView>
