@@ -93,11 +93,12 @@
 
             <Button
                 android:id="@+id/botonGuardar"
-                android:onClick="consultar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/Consultar_Pedido" />
+                android:onClick="consultar"
+                android:text="@string/Consultar_Pedido"
+                android:background="@drawable/borderedondo"
+                android:textColor="@color/colorPrimaryDark" />
         </TableRow>
 
 

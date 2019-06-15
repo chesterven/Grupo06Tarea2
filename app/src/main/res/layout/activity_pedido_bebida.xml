@@ -107,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="agregarBebida"
+                android:background="@drawable/botonredondo2"
                 app:srcCompat="@android:drawable/ic_input_add" />
         </TableRow>
         <TableRow
@@ -154,10 +155,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botonredondo2"
                 app:srcCompat="@drawable/guardado" />
         </TableRow>
-
-
 
 
     </TableLayout>

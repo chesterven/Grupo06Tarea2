@@ -266,6 +266,7 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:text="@string/menuPrincipal"
+            android:background="@drawable/borderedondo"
             android:onClick="menuPrincipal"
             tools:ignore="OnClick"
             />
