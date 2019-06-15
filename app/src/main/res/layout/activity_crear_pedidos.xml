@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/fondoblanco"
     tools:context=".CrearPedidos">
     <TableLayout
         android:layout_width="fill_parent"
@@ -53,7 +53,7 @@
             android:text="@string/especialidad"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             />
         <Spinner
             android:id="@+id/pupa"
@@ -78,7 +78,7 @@
             android:text="@string/masa"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             />
 
         <Spinner
@@ -102,7 +102,7 @@
             android:text="@string/cantidad"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             />
 
         <EditText
