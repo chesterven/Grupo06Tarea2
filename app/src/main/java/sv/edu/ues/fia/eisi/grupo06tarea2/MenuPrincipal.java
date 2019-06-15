@@ -1,12 +1,15 @@
 package sv.edu.ues.fia.eisi.grupo06tarea2;
 
 import android.content.Intent;
+import android.speech.RecognizerIntent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,11 +22,15 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MenuPrincipal extends AppCompatActivity {
+    private static final int REQUEST_CODE_SPEECH_INPUT=1000;
 private ImageView imagenPedido;
+private ImageButton mic;
 private EditText nombreyApellido;
 private CheckBox llevar;
 private Button boton,botonGuardar;
@@ -40,6 +47,7 @@ RequestQueue requestQueue;
         llevar = (CheckBox) findViewById(R.id.checkBoxLlevar);
         boton = (Button) findViewById(R.id.botonIniciar);
         botonGuardar = (Button) findViewById(R.id.botonGuardar);
+        mic=(ImageButton)findViewById(R.id.imgButtonMic);
 
 
         String url="https://prodimages.restaurants-sign.com/350/l717865-pupusas-animated-led-sign.gif";
@@ -48,7 +56,41 @@ RequestQueue requestQueue;
                 .load(url)
                 .into(imagenPedido);
 
+        mic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speak();
+            }
+        });
     }
+
+    private void speak() {
+        Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        getIntent().putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Diga su nombre");
+        try{
+            startActivityForResult(intent,REQUEST_CODE_SPEECH_INPUT);
+        } catch(Exception e) {
+            Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode){
+            case REQUEST_CODE_SPEECH_INPUT:{
+                if(resultCode==RESULT_OK && null!=data){
+                    ArrayList<String> result= data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    nombreyApellido.setText(result.get(0));
+                }
+                break;
+            }
+        }
+    }
+
     public void empezar (View v)
     {
         if (nombreyApellido.getText().toString().equals(""))
