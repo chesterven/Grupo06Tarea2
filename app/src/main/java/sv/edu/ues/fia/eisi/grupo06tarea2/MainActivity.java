@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         //**************Codigo para utilizar la notificacion PUSH************************
         mBuilder =
                 new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.informacion)
+                        .setSmallIcon(R.drawable.info)
                         .setContentTitle("INFORMACIÓN")
                         .setContentText("Todo lo que debes saber sobre nosotros");
         // Activity que se lanza al hacer click a la notificacion
