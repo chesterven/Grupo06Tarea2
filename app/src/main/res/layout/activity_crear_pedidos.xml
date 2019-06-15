@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".CrearPedidos">
     <TableLayout
         android:layout_width="fill_parent"
@@ -20,7 +21,7 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="@string/PedidosTitulo"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/rojo"
         android:textStyle="bold"
         android:textSize="25dp" />
     </TableRow>

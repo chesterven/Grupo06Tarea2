@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/BebidaTitulo"
                 android:gravity="center"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/rojo"
                 android:textStyle="bold"
                 android:textSize="25dp" />
         </TableRow>

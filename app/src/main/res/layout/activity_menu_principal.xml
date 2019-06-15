@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     tools:context=".MenuPrincipal">
 <TableLayout
 android:layout_width="fill_parent"
@@ -14,14 +15,14 @@ android:layout_height="match_parent">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ingresar"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/rojo"
             android:textStyle="bold"
             android:textSize="25dp" />
     </TableRow>
@@ -61,7 +62,7 @@ android:layout_height="match_parent">
             android:text="@string/nombreyapellido"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:gravity="center"/>
     </TableRow>
 
@@ -99,7 +100,7 @@ android:layout_height="match_parent">
             android:text="@string/llevar"
             android:textSize="20dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:gravity="center"/>
         <CheckBox
             android:id="@+id/checkBoxLlevar"
