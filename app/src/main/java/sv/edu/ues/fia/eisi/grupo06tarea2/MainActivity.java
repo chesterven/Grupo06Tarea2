@@ -129,4 +129,8 @@ public class MainActivity extends AppCompatActivity
         Intent intentBuscar = new Intent(this,ConsultarDespachado.class);
         startActivity(intentBuscar);
     }
+
+    public void camaraCompartir(View v){
+
+    }
 }

@@ -51,5 +51,6 @@
     <string name="Estado">Despachado:</string>
     <string name="historia">Historia de las pupusas</string>
     <string name="menuPrincipal">MENU PRINCIPAL</string>
+    <string name="menuCamaraCompartir">Comparte una foto con nosotros</string>
 
 </resources>

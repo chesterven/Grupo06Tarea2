@@ -124,6 +124,23 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:onClick="camaraCompartir"
+                android:background="@drawable/borderedondo"
+                android:text="@string/menuCamaraCompartir"
+                tools:ignore="OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/borderedondo"
                 android:layout_weight="3.5"
                 android:onClick="irQR"
