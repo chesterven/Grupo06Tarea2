@@ -32,6 +32,11 @@ public class DescuentosCamara extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descuentos_camara);
+        if (checkSelfPermission(Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA},
+                    MY_CAMERA_REQUEST_CODE);
+        }
         mImageViewPhoto = (ImageView) findViewById(R.id.imageViewPhoto);
         mButtonTakePhoto = (Button) findViewById(R.id.buttonTakePhoto);
 
@@ -46,11 +51,7 @@ public class DescuentosCamara extends AppCompatActivity {
     private void takePhoto(){
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
-        if (checkSelfPermission(Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA},
-                    MY_CAMERA_REQUEST_CODE);
-        }
+
         Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         if(takePhotoIntent.resolveActivity(getPackageManager()) != null){
