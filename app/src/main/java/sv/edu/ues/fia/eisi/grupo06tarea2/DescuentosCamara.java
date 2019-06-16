@@ -108,7 +108,7 @@ public class DescuentosCamara extends AppCompatActivity {
 
         Uri uri = Uri.fromFile(imageFileToShare);
         share.putExtra(Intent.EXTRA_STREAM, uri);
-        share.putExtra(Intent.EXTRA_TEXT,"Con pupas ya me la paso rico!!");
+        share.putExtra(Intent.EXTRA_TEXT,"Con PUPASYA me la paso rico!!");
         startActivity(Intent.createChooser(share, "Comparte en redes!"));
     }
 }
