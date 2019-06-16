@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void camaraCompartir(View v){
+        Intent intentDescuentos = new Intent(this,DescuentosCamara.class);
+        startActivity(intentDescuentos);
 
     }
 }

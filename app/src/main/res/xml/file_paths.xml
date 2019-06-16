@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <external-path
+        name="Tutoriales"
+        path="Android/data/sv.edu.ues.fia.eisi.grupo06tarea2/files/Pictures"/>
+    </paths>

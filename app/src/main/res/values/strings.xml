@@ -52,5 +52,5 @@
     <string name="historia">Historia de las pupusas</string>
     <string name="menuPrincipal">MENU PRINCIPAL</string>
     <string name="menuCamaraCompartir">Comparte una foto con nosotros</string>
-
+    <string name="tomarfoto">Tomar fotografia</string>
 </resources>
