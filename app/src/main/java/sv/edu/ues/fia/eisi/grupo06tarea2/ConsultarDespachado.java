@@ -73,7 +73,7 @@ public class ConsultarDespachado extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ConsultarDespachado.this, "Error de conexion", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ConsultarDespachado.this, "No existe el número de orden.", Toast.LENGTH_SHORT).show();
             }
         }
         );
